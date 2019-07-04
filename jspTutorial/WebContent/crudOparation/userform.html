@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+<script> 
+function Validation()                                    
+{ 
+	
+    var name = document.forms["RegForm"]["name"]; 
+    var password = document.forms["RegForm"]["password"];
+    var email = document.forms["RegForm"]["email"];    
+    var sex = document.forms["RegForm"]["gender"];  
+    var country =  document.forms["RegForm"]["country"];  
+    if (name.value=="") {
+    	document.getElementById("demo").innerHTML = "this field is required value";
+    	return false;
+     } 
+    else
+    	document.getElementById("demo").innerHTML = ""; 
+    
+    	if (password.value=="") {
+    		document.getElementById("demo1").innerHTML = "this field is required value";
+        	return false;
+        } 
+    	
+    	else
+        	document.getElementById("demo1").innerHTML = ""; 
+    	  
+    return true; 
+}</script> 
+
+<style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=email],a, select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+a {
+background-color:gray;
+font-family:Time New Roman;
+color:pink;
+
+}
+</style>
+<body>
+<center><a href="viewusers.jsp">VIEW TABLE</a></center>
+<h3><b>ADD NEW RECORDS</b></h3>
+
+<div>
+  <form name="RegForm" action="adduser.jsp" onsubmit="return Validation()" method="post">
+    <label for="fname">Name</label>
+    <input type="text" id="fname" name="name" placeholder="Your name..">
+    <p id="demo" style="color:red"></p>
+
+    <label for="pass">Password</label>
+    <input type="password" id="pass" name="password" placeholder="Your password">
+    <p id="demo1" style="color:red"></p>
+    
+    <label for="mail">Email</label>
+    <input type="email" id="mail" name="email" placeholder="Your email">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="India">India</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+      <option value="australia">Australia</option>
+      <option value="chine">China</option>
+      <option value="england">England</option>
+    </select>
+    
+    <label for="gender">Gender</label>
+    <input type="radio" id="gender" name="gender" value="MALE">MALE
+    <input type="radio" id="gender" name="gender" value="FEMALE">FEMALE
+    <input type="radio" id="gender" name="gender" value="OTHER">OTHER
+  
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+</html>
