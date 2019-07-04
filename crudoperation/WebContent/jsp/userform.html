@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+body,html {
+height: 100%;
+  margin: 0;
+}
+.bg {
+  /* The image used */
+  background-image: url("images.jpeg");
+
+  /* Full height */
+ min-height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=email], select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+input[type=password], select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  position: absolute;
+   right: 0;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+ margin: 20px;
+  max-width: 300px;
+  padding: 16px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+<script type="text/javascript">
+function checkForm(form)
+  {
+    if(form.name.value == "") {
+      alert("Error: Username cannot be blank!");
+      form.name.focus();
+      return false;
+    }
+  }
+ </script>
+ 
+  
+<h1></h1>  
+<div class="bg">
+<div class="container">
+<form  action="adduser.jsp"  onsubmit="return checkForm(this) " method="post"> 
+<div style="overflow-x:auto;"> 
+ 
+
+ 
+  <div class="row">
+    <div class="col-25">
+      <label for="uname">Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="name"
+      placeholder="Your name.." required>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="pass">password</label>
+    </div>
+    <div class="col-75">
+      <input type="password" id="passwd" name="password" placeholder="Your password.." required>
+    </div>
+  </div>
+  
+  
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="mail">Email</label>
+    </div>
+    <div class="col-75">
+      <input type="email" id="email" name="email" placeholder="Your email.." required>
+    </div>
+  </div>
+  
+  
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="radio">Gender</label>
+    </div>
+    <div class="col-75">
+      <input type="radio" id="sex" name="sex" value="male" required>male
+      <input type="radio" id="sex" name="sex" value="female" required>female
+    </div>
+  </div>
+  
+  
+  
+  
+  <div class="row">
+    <div class="col-25">
+      <label for="country">Country</label>
+    </div>
+    <div class="col-75">
+      <select id="country" name="country">
+        <option value="australia">India</option>
+        <option value="canada">Pakistan</option>
+        <option value="usa">Afghanistan</option>
+        <option value="usa">Berma</option>
+        <option value="usa">Other</option>
+      </select>
+    </div>
+  </div>
+  
+  <div class="row">
+    <input type="submit" value="Submit">
+  </div>
+  </form> 
+</div>
+
+<a href="viewusers.jsp">View All Records</a><br/>  
+
+</body>
+</html>
